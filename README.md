@@ -37,3 +37,9 @@ Confirm all this works. Then . . .
 
 ## Expand Views and API Routes
 
+## TODOS: 
+
+- POST Routes for models OR Seed Data
+- Create a view that accepts data from the database. 
+- Abstract routes into separate controllers
+- DEPLOY!!!!!!!
