@@ -1,6 +1,26 @@
-<h1>My list of players will go here. </h1>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            {{#each players}}
+            <h1>{{firstName}} {{lastName}}</h1>
+            <p>Reach me at: {{email}} or {{phone}}</p>
+            <button class="btn btn-danger delete-player" data-id="{{id}}">Delete</button>
+            <a href="/players/{{id}}/edit"><button class="btn btn-secondary">Edit</button></a>
+            {{/each}}
+        </div>
+    </div>
+</div>
 
-{{#each players}}
-<h1>{{firstName}} {{lastName}}</h1>
-<p>Reach me at: {{email}} or {{phone}}</p>
-{{/each}}
+<script>
+    $(document).ready(function () {
+        $(".delete-player").on("click", function () {
+            const id = $(this).data("id");
+            $.ajax({
+                method: "DELETE",
+                url: `/api/players/${id}`
+            }).then(response => {
+                window.location.reload();
+            })
+        })
+    })
+</script>
