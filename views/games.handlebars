@@ -2,29 +2,25 @@
 <div class="container">
     <div class="row">
         <div class="col d-flex justify-content-end pt-4">
-            <a href="/player/new">
-                <button class="btn btn-primary">New Player</button>
+            <a href="/game/new">
+                <button class="btn btn-primary">New Game</button>
             </a>
 
         </div>
     </div>
     <div class="row">
         <div class="col">
-            {{#each players}}
-            <h1>{{firstName}} {{lastName}}</h1>
-            <p>Reach me at: {{email}} or {{phone}}</p>
-            <button class="btn btn-danger delete-player" data-id="{{id}}">Delete</button>
-            <a href="/players/{{id}}/edit"><button class="btn btn-secondary">Edit</button></a>
-            <a href="/players/{{id}}"><button class="btn btn-link">Add Games</button></a>
-
-            {{#each Games}}
-                <p>{{name}}</p>
-            {{/each}}
+            {{#each games}}
+            <h1>{{name}}</h1>
+            <p>Category: {{category}}</p>
+            <button class="btn btn-danger delete-game" data-id="{{id}}">Delete</button>
+            <a href="/games/{{id}}/edit"><button class="btn btn-secondary">Edit</button></a>
             {{/each}}
         </div>
     </div>
 </div>
 
+{{!--
 <script>
     $(document).ready(function () {
         $(".delete-player").on("click", function () {
@@ -37,4 +33,4 @@
             })
         })
     })
-</script>
+</script> --}}

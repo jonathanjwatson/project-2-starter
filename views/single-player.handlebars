@@ -1,0 +1,58 @@
+{{> navbar}}
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h1>{{firstName}} {{lastName}}</h1>
+            <p>Reach me at: {{email}} or {{phone}}</p>
+        </div>
+    </div>
+</div>
+
+<input type="hidden" value={{playerId}} id="playerId" />
+
+
+<div class="container">
+    <div class="row">
+        <h1>Available Games to Add</h1>
+    </div>
+    <div class="row">
+        {{#each availableGames}}
+        <div class="col-sm-12">
+            <h3>{{name}}</h3>
+            <button class="btn btn-primary" data-gameId="{{id}}">{{name}}</button>
+        </div>
+        {{/each}}
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(".btn-primary").on("click", function () {
+            console.log("Player Id: ", $("#playerId").val());
+            console.log("Game Id: ", $(this).attr("data-gameId"));
+            $.ajax({
+                method: "POST",
+                url: "/playergames",
+                data: {
+                    playerId: $("#playerId").val(),
+                    gameId: $(this).attr("data-gameId")
+                }
+            })
+        })
+    })
+</script>
+
+{{!--
+<script>
+    $(document).ready(function () {
+        $(".delete-player").on("click", function () {
+            const id = $(this).data("id");
+            $.ajax({
+                method: "DELETE",
+                url: `/api/players/${id}`
+            }).then(response => {
+                window.location.reload();
+            })
+        })
+    })
+</script> --}}

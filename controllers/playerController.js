@@ -8,7 +8,7 @@ router.get("/players", (req, res) => {
     include: db.Game,
   })
     .then((allPlayers) => {
-      console.log(allPlayers);
+      console.log(allPlayers[0].Games);
       res.render("players", { players: allPlayers });
     })
     .catch((err) => {
@@ -18,6 +18,32 @@ router.get("/players", (req, res) => {
 
 router.get("/player/new", (req, res) => {
   res.render("new-player");
+});
+
+router.get("/players/:id", (req, res) => {
+  console.log("Single player");
+  db.Player.findOne({
+    where: {
+      id: req.params.id,
+    },
+  })
+    .then(async (foundPlayer) => {
+      console.log(foundPlayer);
+
+      const allGames = await db.Game.findAll({});
+      console.log(allGames);
+      res.render("single-player", {
+        playerId: foundPlayer.id,
+        firstName: foundPlayer.firstName,
+        lastName: foundPlayer.lastName,
+        email: foundPlayer.email,
+        phone: foundPlayer.phone,
+        availableGames: allGames,
+      });
+    })
+    .catch((err) => {
+      console.log(err);
+    });
 });
 
 router.get("/players/:id/edit", (req, res) => {
