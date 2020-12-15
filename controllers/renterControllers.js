@@ -3,13 +3,18 @@ const router = express.Router();
 
 const db = require("../models");
 
-router.get("/renters", (req, res) => {
+// GET route for renter, will return all bookings for the partical renter based on renterId
+// Renter table will have multiple records for the same renterID because of multiple bookings  
+router.get("/renters/:rentersId", (req, res) => {
   db.Renters.findAll({
-    include: db.Game,
+    include: db.Bookings,
+    where: {
+        rentersId: req.params.rentersId
+    }
   })
-    .then((allPlayers) => {
-      console.log(allPlayers);
-      res.render("players", { players: allPlayers });
+    .then((renter) => {
+      console.log(renter);
+      res.render("renter", { renter: renter });
     })
     .catch((err) => {
       console.log(err);
