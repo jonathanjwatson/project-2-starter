@@ -1,3 +1,5 @@
+const { STRING } = require("sequelize/types");
+
 module.exports = function (sequelize, DataTypes) {
     const Renters = sequelize.define("Renters", {
       email: DataTypes.STRING,
@@ -6,16 +8,18 @@ module.exports = function (sequelize, DataTypes) {
       lastName: DataTypes.STRING,
       phone: DataTypes.STRING,
       reason: DataTypes.STRING,
+      propertyID: DataTypes.STRING,
+      bookingID: DataTypes.STRING,
       // TODO: Days of the week?
     });
   
-    Player.associate = function (models) {
-      Player.belongsToMany(models.Game, {
-        through: "PlayerGames",
-        foreignKey: "playerId",
+    Renters.associate = function (models) {
+      Renters.belongsToMany(models.Host, {
+        through: "Bookings",
+        foreignKey: "bookingID",
       });
     };
   
-    return Player;
+    return Renters;
   };
   
