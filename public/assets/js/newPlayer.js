@@ -15,6 +15,7 @@ $(document).ready(function () {
     console.log(firstName);
     console.log(lastName);
 
+     // AJAX calling routes
     $.ajax({
       method: "POST",
       url: "/api/players",
