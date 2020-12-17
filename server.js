@@ -1,6 +1,7 @@
 const express = require("express");
 const exphbs = require("express-handlebars");
 const handlebars = require("handlebars");
+const path = require("path");
 const {
   allowInsecurePrototypeAccess,
 } = require("@handlebars/allow-prototype-access");
@@ -17,7 +18,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 // Static directory to be served
-app.use(express.static("public"));
+app.use(express.static(path.join(__dirname, "public")));
 
 // Configure express-handlebars
 app.engine(
@@ -34,6 +35,17 @@ app.set("view engine", "handlebars");
 // Views Routes
 app.get("/", (req, res) => {
   res.render("index");
+});
+app.get("/renter", (req, res) => {
+  res.render("renter");
+});
+app.get("/host", (req, res) => {
+  res.render("host");
+});
+app.get("/type", (req, res) => {
+  res.render("type", {
+    listings:[{name:"art studio"},{name:"music studio"},{name:"dance studio"}]
+  });
 });
 
 app.use(playerController);
