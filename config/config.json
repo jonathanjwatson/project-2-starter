@@ -1,15 +1,15 @@
 {
   "development": {
     "username": "root",
-    "password": "kitty123",
-    "database": "test_db",
+    "password": "spootie1",
+    "database": "your_space_db",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
   "test": {
     "username": "root",
     "password": "spootie1",
-    "database": "database_test",
+    "database": "your_space_db",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
