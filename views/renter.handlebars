@@ -1,0 +1,61 @@
+{{> navbar}}
+<div class="container">
+    <div class="row">
+        <div class="col-m-6"></div>
+        <div class="col-m-6">
+            <form id="new-player">
+
+                <div class="mb-3">
+                    <label for="firstName" class="form-label">First Name</label>
+                    <input type="text" class="form-control" id="firstName">
+                </div>
+                <div class="mb-3">
+                    <label for="lastName" class="form-label">Last Name</label>
+                    <input type="text" class="form-control" id="lastName">
+                </div>
+                
+                <form action="#">
+                    <p>
+                        <label>
+                            <input name="group1" type="radio" checked />
+                            <span>8am-12pm Morning</span>
+                        </label>
+                    </p>
+                    <p>
+                        <label>
+                            <input name="group1" type="radio" />
+                            <span>1pm-5pm Afternoon</span>
+                        </label>
+                    </p>
+                    <p>
+                        <label>
+                            <input name="group1" type="radio" />
+                            <span>6-10pm Evening</span>
+                        </label>
+                    </p>
+                    <p>
+                    <label for="datePicker" class="form-label"> Select Date</label>
+                    <input type="text"class="datepicker" id="datePicker">
+                    </p>
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">Email address</label>
+                        <input type="email" class="form-control" id="exampleFormControlInput1"
+                            placeholder="name@example.com">
+                    </div>
+                    <p>
+                    <div class="mb-3">
+                        <label for="phoneNumber" class="form-label">Phone Number</label>
+                        <input type="phoneNumber" class="form-control" id="phoneNumber">
+                    </div>
+                    </p>
+                    <div class="mb-3">
+                        <label for="description" class="form-label">Why are you renting ?</label>
+                        <textarea class="form-control" id="desription" rows="3"></textarea>
+                    </div>
+
+
+                    <button type="bookIt" class="btn btn-primary">Book it</button>
+
+                </form>
+
+                    <script type="text/javascript" src="/assets/js/newPlayer.js"></script>
