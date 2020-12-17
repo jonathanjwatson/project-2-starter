@@ -1,5 +1,5 @@
 $(document).ready(function () {
-  $("#edit-player").on("submit", function (e) {
+  $("#edit-renter").on("submit", function (e) {
     e.preventDefault();
     const id = $(this).data("id");
     const email = $("#email").val();
@@ -9,7 +9,7 @@ $(document).ready(function () {
 
     $.ajax({
       method: "PUT",
-      url: `/api/players/${id}`,
+      url: `/api/renters/${id}`,
       data: {
         email,
         password,
@@ -17,7 +17,7 @@ $(document).ready(function () {
         lastName,
       },
     }).then((response) => {
-      window.location.replace("/players");
+      window.location.replace("/renters");
     });
   });
 });
