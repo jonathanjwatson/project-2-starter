@@ -44,7 +44,7 @@ app.get("/host", (req, res) => {
 });
 app.get("/type", (req, res) => {
   res.render("type", {
-    listings:[{name:"art studio"},{name:"music studio"}]
+    listings:[{name:"art studio"},{name:"music studio"},{name:"dance studio"}]
   });
 });
 
