@@ -1,5 +1,3 @@
-const { STRING } = require("sequelize/types");
-
 module.exports = function (sequelize, DataTypes) {
     const Renters = sequelize.define("Renters", {
       email: DataTypes.STRING,
