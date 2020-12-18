@@ -5,17 +5,17 @@ const db = require("../models");
 
 // GET route for renter, will return all bookings for the partical renter based on renterId
 // Renter table will have multiple records for the same renterID because of multiple bookings  
-router.get("/renters/:email", (req, res) => {
-  db.Renters.findAll({
-    include: db.Bookings,
+router.get("/property/:email", (req, res) => {
+  db.Property push.findAll({
+    include: db.Host,
     where: {
         //email is db col name
         email: req.params.email
     }
   })
     .then((renters) => {
-      console.log(renters);
-      res.render("renters", { renters: renters });
+      console.log(property);
+      res.render("property", { property: property });
     })
     .catch((err) => {
       console.log(err);
@@ -24,7 +24,7 @@ router.get("/renters/:email", (req, res) => {
 
 //copy
 router.get("/propertyTypes/:propertyTypeId", (req, res) => {
-    db.propertys.findAll({
+    db.properties.findAll({
       include: db.Bookings,
       where: {
           rentersId: req.params.rentersId
