@@ -42,12 +42,31 @@ app.get("/renter", (req, res) => {
 app.get("/host", (req, res) => {
   res.render("host");
 });
-app.get("/type", (req, res) => {
+app.get("/studio", (req, res) => {
   res.render("type", {
     listings: [
-      { name: "art studio", image: "https://images.unsplash.com/photo-1570129477492-45c003edd2be?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80", description: "Yes Sir", isNotBooked: true },
-      { name: "music studio", description: "Lorem Ipsum", isNotBooked: true },
-      { name: "dance studio", description: "Hey lolo", isNotBooked: true },
+      { name: "Art studio",id:"S1", description: "This beautiful art studio is located off Krog Street in downtown Atlanta.It can be used for a class or single use .",},
+      { name: "Music studio",id:"S2", description: "Lorem Ipsum",},
+      { name: "Dance studio", id:"S3",description: "Hey lolo",  },
+    ],
+  });
+});
+
+app.get("/outdoor", (req, res) => {
+  res.render("type", {
+    listings: [
+      { name: "Art out",id:"S1", description: "This beautiful art studio is located off Krog Street in downtown Atlanta.It can be used for a class or single use .",},
+      { name: "Music out",id:"S2", description: "Lorem Ipsum",},
+      { name: "Dance out", id:"S3",description: "Hey lolo",  },
+    ],
+  });
+});
+app.get("/urban", (req, res) => {
+  res.render("type", {
+    listings: [
+      { name: "Art urb",id:"S1", description: "This beautiful art studio is located off Krog Street in downtown Atlanta.It can be used for a class or single use .",},
+      { name: "Music out",id:"S2", description: "Lorem Ipsum",},
+      { name: "Dance out", id:"S3",description: "Hey lolo",  },
     ],
   });
 });
