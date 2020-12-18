@@ -1,19 +1,57 @@
 {{> navbar}}
 <div class="container">
     <div class="row">
+
         <div class="col-m-6"></div>
         <div class="col-m-6">
             <form id="new-booking">
 
-                <div class="mb-3">
-                    <label for="firstName" class="form-label">First Name</label>
-                    <input type="text" class="form-control" id="firstName">
+        <div class="col s12 m4">
+            <div class="card medium">
+                <div class="card-image">
+                    <img src="images/sample-1.jpg">
+                    <span class="card-title"></span>
                 </div>
-                <div class="mb-3">
-                    <label for="lastName" class="form-label">Last Name</label>
-                    <input type="text" class="form-control" id="lastName">
+            </div>
+        </div>
+
+
+        <div class="col s12 m4">
+            <div class="card medium">
+                <div class="card-image">
+                    <img src="images/sample-1.jpg">
+                    <span class="card-title"></span>
                 </div>
+            </div>
+        </div>
+
+        <div class="col s12 m4">
+            <div class="card medium">
+                <div class="card-image">
+                    <img src="images/sample-1.jpg">
+                    <span class="card-title"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+     <div>
+        <form id="renter" method="post">
+            <div class="mb-3">
+                <label for="firstName" class="form-label">First Name</label>
+                <input type="text" class="form-control" id="firstName">
+            </div>
+            <div class="mb-3">
+                <label for="lastName" class="form-label">Last Name</label>
+                <input type="text" class="form-control" id="lastName">
+            </div>
+            <div class="mb-3">
+                <label for="datePicker" class="form-label">Select Date</label>
+                <input type="text" class="datepicker" id="datePicker">
+            </div>
+            <div class="input-field mb3">
                 
+
                 {{!-- <form action="#"> --}}
                     <p>
                         <label>
@@ -53,9 +91,46 @@
                         <textarea class="form-control" id="description" rows="3"></textarea>
                     </div>
 
+                <select class="browser-default">
+                    <option value="" disabled selected>Select a time</option>
+                    <option value="1">Morning 8am-12pm</option>
+                    <option value="2">Afternon 1pm-5pm</option>
+                    <option value="3">Evening 6pm-10pm</option>
+                </select>
+                <label> </label>
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="exampleFormControlInput1"
+                    placeholder="name@example.com">
+            </div>
+            
+         <div class="row">
+            <div class="mb-3">
+                <label for="phoneNumber" class="form-label">Phone Number</label>
+                <input type="phoneNumber" class="form-control" id="phoneNumber">
+            </div>
+            <div class="mb-3">
+                <label for="guestNumber" class="form-label">Number of Guest</label>
+                <input type="guestNumber" class="form-control" id="guestNumber">
+             </div>
+         </div>     
+            
+            </div>
+            <div class="mb-3" >
+                <label for="description" class="form-label">Why are you renting ?</label>
+                <textarea class="form-control" id="description" rows="3"></textarea>
+            </div>
+            <button type="bookIt" class="btn btn-primary">Book it</button>
+        </form>
+    </div>
+</div>
 
-                    <button type="bookIt" class="btn btn-primary">Book it</button>
 
-                </form>
+    
 
-                    <script type="text/javascript" src="/assets/js/newPlayer.js"></script>
+       
+    
+
+
+<script type="text/javascript" src="/assets/js/renterControllers.js"></script>
