@@ -1,10 +1,10 @@
 $(document).ready(function () {
-  console.log("My new renter form will go here.");
+  console.log("My new player form will go here.");
   console.log(
     "I can write all my actual code in a javascript file. Not inside a handlebars file. "
   );
 
-  $("#new-renter").on("submit", function (e) {
+  $("#new-player").on("submit", function (e) {
     e.preventDefault();
     const email = $("#email").val();
     const password = $("#password").val();
@@ -18,7 +18,7 @@ $(document).ready(function () {
      // AJAX calling routes
     $.ajax({
       method: "POST",
-      url: "/api/renters",
+      url: "/api/players",
       data: {
         email,
         password,
@@ -26,7 +26,7 @@ $(document).ready(function () {
         lastName,
       },
     }).then((response) => {
-      window.location.replace("/renters");
+      window.location.replace("/players");
     });
   });
 });
