@@ -3,7 +3,7 @@ const router = express.Router();
 
 const db = require("../models");
 
-// GET route for renter, will return all bookings for the partical renter based on renterId
+// GET route for renter, will return all bookings for the specific renter based on renterId *EMAIL*
 // Renter table will have multiple records for the same renterID because of multiple bookings  
 router.get("/renters/:email", (req, res) => {
   db.Renters.findAll({
@@ -41,26 +41,45 @@ router.get("/renters/:rentersId", (req, res) => {
   //copy
 
 //GET route retrieve all bookings for a specific location ID
-router.get("/renters/bookingDetails/:locationId", (req, res) => {
-    db.Renters.findAll({
-      where: {
-          locationId: req.params.locationId
+// router.get("/renters/bookingDetails/:locationId", (req, res) => {
+//     db.Renters.findAll({
+//       where: {
+//           locationId: req.params.locationId
+//       }
+//     })
+//       .then((bookingDetails) => {
+//         console.log(renters);
+//         let bookingDetailsObj = {
+//             //ensure that "startDD" is the correct variable name to use for column
+//             "bookingDate": bookingDetails.startDD, 
+//             "timeReserve": bookingDetails.timeReserve,
+//         }
+//         res.render("bookingdetails", { bookingDetails: bookingDetailsObj });
+//       })
+//       .catch((err) => {
+//         console.log(err);
+//       });
+//   });
+router.get("/renters/bookingDetails/:propertyID", (req, res) => {
+  db.Renters.findAll({
+    where: {
+      propertyID: req.params.propertyID
+    }
+  })
+    .then((bookingDetails) => {
+      console.log(bookingDetails)
+      console.log(renters);
+      let bookingDetailsObj = {
+          //ensure that "startDD" is the correct variable name to use for column
+          "bookingDate": bookingDetails.startDD, 
+          "timeReserve": bookingDetails.timeReserve,
       }
+      res.render("bookingdetails", { bookingDetails: bookingDetailsObj });
     })
-      .then((bookingDetails) => {
-        console.log(renters);
-        let bookingDetailsObj = {
-            //ensure that "startDD" is the correct variable name to use for column
-            "bookingDate": bookingDetails.startDD, 
-            "timeReserve": bookingDetails.timeReserve,
-        }
-        res.render("bookingdetails", { bookingDetails: bookingDetailsObj });
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  });
-
+    .catch((err) => {
+      console.log(err);
+    });
+});
 
 
 
