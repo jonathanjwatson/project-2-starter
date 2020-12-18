@@ -1,4 +1,4 @@
-const { STRING } = require("sequelize/types");
+// const { STRING } = require("sequelize/types");
 
 module.exports = function (sequelize, DataTypes) {
     const Renters = sequelize.define("Renters", {
@@ -8,7 +8,7 @@ module.exports = function (sequelize, DataTypes) {
       lastName: DataTypes.STRING,
       phone: DataTypes.STRING,
       reason: DataTypes.STRING,
-      propertyID: DataTypes.STRING,
+      propertyTypeID: DataTypes.STRING,
       bookingID: DataTypes.STRING,
       // TODO: Days of the week?
     });

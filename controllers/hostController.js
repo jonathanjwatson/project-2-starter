@@ -48,7 +48,7 @@ router.post("/api/hosts", (req, res) => {
 });
 
 router.put("/api/hosts/:id", (req, res) => {
-  db.Player.update(req.body, {
+  db.Host.update(req.body, {
     where: {
       id: req.params.id,
     },

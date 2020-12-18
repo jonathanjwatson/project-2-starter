@@ -1,4 +1,4 @@
-const { STRING } = require("sequelize/types");
+// const { STRING } = require("sequelize/types");
 
 module.exports = function (sequelize, DataTypes) {
     const Host = sequelize.define("Host", {
@@ -12,4 +12,5 @@ module.exports = function (sequelize, DataTypes) {
     
     });
 
-    return Host};
+    return Host
+  };

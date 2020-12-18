@@ -8,7 +8,7 @@ const {
 const db = require("./models");
 const app = express();
 
-const playerController = require("./controllers/playerController");
+const renterController = require("./controllers/renterController");
 
 const PORT = process.env.PORT || 8080;
 
@@ -42,13 +42,13 @@ app.get("/renter", (req, res) => {
 app.get("/host", (req, res) => {
   res.render("host");
 });
-app.get("/type", (req, res) => {
-  res.render("type", {
-    listings:[{name:"art studio"},{name:"music studio"},{name:"dance studio"}]
+app.get("/propertyType", (req, res) => {
+  res.render("propertyType", {
+    listings:[{name:"art studio"},{name:"music studio"},{name:"workshop"}]
   });
 });
 
-app.use(playerController);
+app.use(renterController);
 
 // API Routes
 app.get("/api/config", (req, res) => {
