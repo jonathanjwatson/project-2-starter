@@ -5,7 +5,6 @@ const db = require("../models");
 
 router.get("/hosts", (req, res) => {
   db.Host.findAll({
-    include: db.PropertyType,
   })
     .then((allHosts) => {
       console.log(allHosts);
