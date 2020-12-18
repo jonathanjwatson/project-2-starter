@@ -16,8 +16,8 @@ $(document).ready(function () {
       const reason = $("#description").val();
       const locationId = "S1";
       const bookingId = "4352";
-
-
+      const startDD = $("#datePicker").val();
+        const timeReserve = $("input[name='group1']:checked").val();
       
 
       console.log(email);
@@ -25,6 +25,9 @@ $(document).ready(function () {
       console.log(firstName);
       console.log(lastName);
       console.log(reason);
+      console.log(startDD);
+      console.log(timeReserve);
+
   
        // AJAX calling routes line 109 
       $.ajax({
@@ -38,6 +41,10 @@ $(document).ready(function () {
           locationId,
           bookingId,
           reason,
+          startDD,
+        //   propertyId, 
+        timeReserve,
+
 
          
         },
