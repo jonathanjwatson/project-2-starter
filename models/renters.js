@@ -12,7 +12,10 @@
 //       bookingID: DataTypes.STRING,
 //       // TODO: Days of the week?
 //     });
-  
+document.addEventListener('DOMContentLoaded', function() {
+  var elems = document.querySelectorAll('select');
+  var instances = M.FormSelect.init(elems, options);
+});
 //     // Renters.associate = function (models) {
 //     //   Renters.belongsToMany(models.Host, {
 //     //     through: "Bookings",
