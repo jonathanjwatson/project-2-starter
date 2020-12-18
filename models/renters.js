@@ -1,8 +1,5 @@
-<<<<<<< HEAD
 // const { STRING } = require("sequelize/types");
 
-=======
->>>>>>> main
 module.exports = function (sequelize, DataTypes) {
 
     const Renters = sequelize.define("Renters", {
@@ -12,14 +9,8 @@ module.exports = function (sequelize, DataTypes) {
       lastName: DataTypes.STRING,
       phoneNum: DataTypes.STRING,
       reason: DataTypes.STRING,
-<<<<<<< HEAD
       propertyTypeID: DataTypes.STRING,
       bookingID: DataTypes.STRING,
-=======
-      locationId: DataTypes.STRING,
-      bookingId: DataTypes.STRING,
-    
->>>>>>> main
       // TODO: Days of the week?
     },
   {timestamps:false});
