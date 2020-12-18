@@ -8,7 +8,7 @@ const {
 const db = require("./models");
 const app = express();
 
-const playerController = require("./controllers/playerController");
+const renterControllers = require("./controllers/renterControllers");
 
 const PORT = process.env.PORT || 8080;
 
@@ -52,7 +52,7 @@ app.get("/type", (req, res) => {
   });
 });
 
-app.use(playerController);
+app.use(renterControllers);
 
 // API Routes
 app.get("/api/config", (req, res) => {
