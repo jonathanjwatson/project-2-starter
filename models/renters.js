@@ -4,12 +4,14 @@ module.exports = function (sequelize, DataTypes) {
       numGuest: DataTypes.INTEGER,
       firstName: DataTypes.STRING,
       lastName: DataTypes.STRING,
-      phone: DataTypes.STRING,
+      phoneNum: DataTypes.STRING,
       reason: DataTypes.STRING,
-      propertyID: DataTypes.STRING,
-      bookingID: DataTypes.STRING,
+      locationId: DataTypes.STRING,
+      bookingId: DataTypes.STRING,
+    
       // TODO: Days of the week?
-    });
+    },
+  {timestamps:false});
   
     Renters.associate = function (models) {
       Renters.belongsToMany(models.Host, {

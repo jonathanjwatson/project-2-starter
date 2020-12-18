@@ -11,28 +11,38 @@ $(document).ready(function () {
      
       const firstName = $("#firstName").val();
       const lastName = $("#lastName").val();
-      const password = $("#password").val();
+    
       const phoneNum = $("#phoneNum").val();
-      const phoneNum = $("#phoneNum").val();
+      const reason = $("#description").val();
+      const locationId = "S1";
+      const bookingId = "4352";
+
+
       
 
       console.log(email);
-      console.log(password);
+      console.log(phoneNum);
       console.log(firstName);
       console.log(lastName);
+      console.log(reason);
   
-       // AJAX calling routes
+       // AJAX calling routes line 109 
       $.ajax({
         method: "POST",
-        url: "/api/renterss",
+        url: "/api/renters",
         data: {
-          email,
-          password,
           firstName,
           lastName,
+          email,
+          phoneNum,
+          locationId,
+          bookingId,
+          reason,
+
+         
         },
       }).then((response) => {
-        window.location.replace("/players");
+        window.location.replace("/renter");
       });
     });
   });
