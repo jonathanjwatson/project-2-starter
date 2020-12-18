@@ -1,15 +1,24 @@
 $(document).ready(function () {
-  $("#edit-player").on("submit", function (e) {
+  console.log("My new player form will go here.");
+  console.log(
+    "I can write all my actual code in a javascript file. Not inside a handlebars file. "
+  );
+
+  $("#new-player").on("submit", function (e) {
     e.preventDefault();
-    const id = $(this).data("id");
     const email = $("#email").val();
     const password = $("#password").val();
     const firstName = $("#firstName").val();
     const lastName = $("#lastName").val();
+    console.log(email);
+    console.log(password);
+    console.log(firstName);
+    console.log(lastName);
 
+     // AJAX calling routes
     $.ajax({
-      method: "PUT",
-      url: `/api/players/${id}`,
+      method: "POST",
+      url: "/api/players",
       data: {
         email,
         password,

@@ -127,7 +127,7 @@ router.post("/api/renters", (req, res) => {
     });
 });
  
-// PUT to allow them to update date or time
+// PUT to allow them to update date or time or number of guests
 router.put("/api/renters/:bookingID", (req, res) => {
   db.Renters.update(req.body, {
     where: {

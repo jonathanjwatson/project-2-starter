@@ -1,8 +1,8 @@
 {
   "development": {
     "username": "root",
-    "password": "spootie1",
-    "database": "your_space_db",
+    "password": "MajiNo.1!",
+    "database": "rentalhost_db",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
