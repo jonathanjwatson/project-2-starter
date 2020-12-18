@@ -41,10 +41,10 @@ router.get("/renters/:rentersId", (req, res) => {
   //copy
 
 //GET route retrieve all bookings for a specific location ID
-router.get("/renters/bookingDetails/:locationId", (req, res) => {
+router.get("/renters/bookingDetails/:propertyTypeId", (req, res) => {
     db.Renters.findAll({
       where: {
-          locationId: req.params.locationId
+          propertyTypeId: req.params.propertyTypeId
       }
     })
       .then((bookingDetails) => {
