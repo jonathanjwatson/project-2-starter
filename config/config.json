@@ -2,14 +2,14 @@
   "development": {
     "username": "root",
     "password": "spootie1",
-    "database": "your_space_db",
+    "database": "rentalhost_db",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
   "test": {
     "username": "root",
     "password": "spootie1",
-    "database": "your_space_db",
+    "database": "rentalhost_db",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },

@@ -1,5 +1,5 @@
-DROP DATABASE IF EXISTS test_db;
-CREATE DATABASE test_db;
+DROP DATABASE IF EXISTS rentalhost_db;
+CREATE DATABASE rentalhost_db;
                   
 -- CREATE TABLE RENTER(                         
 --   id INTEGER(11) AUTO_INCREMENT NOT NULL,       
