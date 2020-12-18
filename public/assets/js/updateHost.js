@@ -6,18 +6,22 @@ $(document).ready(function () {
       const password = $("#password").val();
       const firstName = $("#firstName").val();
       const lastName = $("#lastName").val();
-  
+      const propertyType = $("#propertyType").val();
+      const description = $("#description").val();
+
       $.ajax({
         method: "PUT",
-        url: `/api/renters/${id}`,
+        url: `/api/hosts/${id}`,
         data: {
           email,
           password,
           firstName,
           lastName,
+          propertyType,
+          description,
         },
       }).then((response) => {
-        window.location.replace("/renters");
+        window.location.replace("/hosts");
       });
     });
   });

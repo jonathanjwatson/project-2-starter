@@ -19,7 +19,7 @@ $(document).ready(function () {
        // AJAX calling routes
       $.ajax({
         method: "POST",
-        url: "/api/renters",
+        url: "/api/hosts",
         data: {
           email,
           password,
@@ -28,7 +28,7 @@ $(document).ready(function () {
           propertyType,
         },
       }).then((response) => {
-        window.location.replace("/renters");
+        window.location.replace("/hosts");
       });
     });
   });
