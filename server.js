@@ -8,11 +8,7 @@ const {
 const db = require("./models");
 const app = express();
 
-<<<<<<< HEAD
 const renterController = require("./controllers/renterController");
-=======
-const renterControllers = require("./controllers/renterControllers");
->>>>>>> main
 
 const PORT = process.env.PORT || 8080;
 
@@ -46,7 +42,6 @@ app.get("/renter", (req, res) => {
 app.get("/host", (req, res) => {
   res.render("host");
 });
-<<<<<<< HEAD
 app.get("/propertyType", (req, res) => {
   res.render("propertyType", {
     listings:[{name:"art studio"},{name:"music studio"},{name:"workshop"}]
@@ -54,19 +49,6 @@ app.get("/propertyType", (req, res) => {
 });
 
 app.use(renterController);
-=======
-app.get("/type", (req, res) => {
-  res.render("type", {
-    listings: [
-      { name: "art studio", image: "https://images.unsplash.com/photo-1570129477492-45c003edd2be?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80", description: "Yes Sir", isNotBooked: true },
-      { name: "music studio", description: "Lorem Ipsum", isNotBooked: true },
-      { name: "dance studio", description: "Hey lolo", isNotBooked: true },
-    ],
-  });
-});
-
-app.use(renterControllers);
->>>>>>> main
 
 // API Routes
 app.get("/api/config", (req, res) => {
