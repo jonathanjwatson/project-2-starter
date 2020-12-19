@@ -1,5 +1,6 @@
 const express = require("express");
 const router = express.Router();
+const Renters = require("../models/renters");
 
 const db = require("../models");
 
@@ -41,40 +42,14 @@ router.get("/renters/:rentersId", (req, res) => {
   //copy
 
 //GET route retrieve all bookings for a specific location ID
-// router.get("/renters/bookingDetails/:locationId", (req, res) => {
-//     db.Renters.findAll({
-//       where: {
-//           locationId: req.params.locationId
-//       }
-//     })
-//       .then((bookingDetails) => {
-//         console.log(renters);
-//         let bookingDetailsObj = {
-//             //ensure that "startDD" is the correct variable name to use for column
-//             "bookingDate": bookingDetails.startDD, 
-//             "timeReserve": bookingDetails.timeReserve,
-//         }
-//         res.render("bookingdetails", { bookingDetails: bookingDetailsObj });
-//       })
-//       .catch((err) => {
-//         console.log(err);
-//       });
-//   });
-router.get("/renters/bookingDetails/:propertyID", (req, res) => {
-  db.Renters.findAll({
-    where: {
-      propertyID: req.params.propertyID
-    }
-  })
-    .then((bookingDetails) => {
-      console.log(bookingDetails)
-      console.log(renters);
-      let bookingDetailsObj = {
-          //ensure that "startDD" is the correct variable name to use for column
-          "bookingDate": bookingDetails.startDD, 
-          "timeReserve": bookingDetails.timeReserve,
-      }
-      res.render("bookingdetails", { bookingDetails: bookingDetailsObj });
+router.get("/renters/bookingDetails/:propertyTypeId", (req, res) => {
+    db.Renters.findAll({
+      where: {
+          propertyTypeId: req.params.propertyTypeId
+      },
+      
+    }).then((booking) => {
+      res.render("bookingdetails", { bookingDetails: bookingDetailsObj })
     })
     .catch((err) => {
       console.log(err);
@@ -109,7 +84,8 @@ router.get("/players/:id/edit", (req, res) => {
 router.post("/api/renters", (req, res) => {
   console.log("inside post method")
   console.log(req.body)
-  db.Renters.create(req.body)
+  console.log(Renters)
+  Renters.create(req.body)
     .then((newRenter) => {
         // let bookingDetails = {
         //     "bookingId": req.body.bookingId, 
@@ -121,6 +97,7 @@ router.post("/api/renters", (req, res) => {
         //     res.json(newRenter);
         // })
         res.json(newRenter);
+        res.render("confirm", {name: "James"})
     })
     .catch((err) => {
       console.log(err);

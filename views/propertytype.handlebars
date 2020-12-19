@@ -1,27 +1,27 @@
 {{>navbar}}
 <div class="container">
 {{#each listings}}
-{{#if isNotBooked}}
+
 <div class="row">
     <div class="col m4 s12">
         <div>
-            <div class="card medium">
+            <div class="card ">
                
-            
+            <a href="/renter">
                 <div class="card-image">
-                    <img alt={{name}} src={{image}} /> 
+                    <img alt={{name}} src={{img}}/> 
                 </div>
-                
+            </a>    
             </div>
         </div>
   </div>
 <div class="col m8">
-<p>
-   <span class="card-title">{{name}}</span>
+
+   <h2 class="card-title">{{name}}</h2>
                 <p>{{description}}</p> 
-</p>
+
 </div>
 </div>
-{{/if}}
+
 {{/each}}
 </div>
