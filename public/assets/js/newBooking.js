@@ -5,7 +5,7 @@ $(document).ready(function () {
       "I can write all my actual code in a javascript file. Not inside a handlebars file. "
     );
   
-    $("#new-booking").on("submit", function (e) {
+    $("#new-booking").on("click", function (e) {
       e.preventDefault();
       const email = $("#email").val();
      
@@ -49,7 +49,7 @@ $(document).ready(function () {
          
         },
       }).then((response) => {
-        window.location.replace("/renter");
+        window.location.replace("/confirm");
       });
     });
   });

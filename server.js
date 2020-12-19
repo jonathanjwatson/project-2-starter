@@ -50,7 +50,7 @@ app.get("/studio", (req, res) => {
   res.render("propertyType", {
     listings: [
       { name: "Art studio",id:"S1", description: "This beautiful art studio is located off Krog Street in downtown Atlanta.It can be used for a class or single use.",  },
-      { name: "Music studio",id:"S2", description: "Lorem Ipsum",},
+      { name: "Music studio",id:"S2", img:"https://images.pexels.com/photos/164938/pexels-photo-164938.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" ,description: "Lorem Ipsum",},
       { name: "Dance studio", id:"S3",description: "Hey lolo",  },
     ],
   });
