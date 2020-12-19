@@ -74,9 +74,10 @@ app.get("/urban", (req, res) => {
     ],
   });
 });
-app.get("/confirm" ,(req,res )=>{
-  res.render("confirm")
-});
+
+app.get("/confirm/:id", function(req, res, next) {
+  res.render("confirm", {output: req.params.id})
+})
 
 app.use(renterController);
 
