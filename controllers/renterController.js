@@ -82,11 +82,10 @@ router.get("/players/:id/edit", (req, res) => {
 //POST route for renter to create new booking on Renters AND Bookings table
 //
 router.post("/api/renters", (req, res) => {
-  console.log("inside post method")
   console.log(req.body)
-  console.log(Renters)
   Renters.create(req.body)
     .then((newRenter) => {
+      console.log(newRenter);
         // let bookingDetails = {
         //     "bookingId": req.body.bookingId, 
         //     "rentersId": req.body.rentersId,

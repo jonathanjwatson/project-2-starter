@@ -8,16 +8,14 @@ $(document).ready(function () {
     $("#new-booking").on("click", function (e) {
       e.preventDefault();
       const email = $("#email").val();
-     
       const firstName = $("#firstName").val();
       const lastName = $("#lastName").val();
-    
       const phoneNum = $("#phoneNum").val();
       const reason = $("#description").val();
       const locationId = "S1";
       const bookingId = "4352";
       const startDD = $("#datePicker").val();
-        const timeReserve = $("input[name='group1']:checked").val();
+      const timeReserve = $("input[name='group1']:checked").val();
       
 
       console.log(email);
