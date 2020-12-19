@@ -47,7 +47,7 @@ $(document).ready(function () {
          
         },
       }).then((response) => {
-        window.location.replace("/confirm");
+        window.location.replace(`/confirm/${response.id}`);
       });
     });
   });
