@@ -1,16 +1,54 @@
 {{> navbar}}
-<div class="container">
-    <div class="row">
-        <div class="col d-flex justify-content-end pt-4">
-            <a href="/player/new">
-                <button class="btn btn-primary">New Player</button>
-            </a>
 
+<div class="container">
+    <h1>Interested in Being a Host?</h1> 
+    <p>Just fill out the form below and upload a picture. Someone will get back to you.<p>
+ </div>     
+
+<div class="container">
+   <div class="row">
+    <form class="col s12">
+      <div class="row">
+        <div class="input-field col s6">
+            <input id="first_name" type="text" class="validate">
+          <label for="first_name">First Name</label> 
         </div>
+        <div class="input-field col s6">
+          <input id="last_name" type="text" class="validate">
+          <label for="last_name">Last Name</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s6">
+          <input id="phoneNumber" type="phoneNumber" class="validate">
+          <label for="phoneNum">Phone Number</label>
+        </div>
+        
+          <div class="row">
+        <div class="input-field col s6">
+          <input id="email" type="email" class="validate">
+          <label for="email">Email</label>
+        </div>
+        <form action="#">
+    <div class="file_upload-icon">
+        <input type="file">
+      </div>
+      <div class="file-path-wrapper">
+        <input class="file-path validate" type="text">
+      </div>
     </div>
+       <div class="row">
+          <div class="input-field col s12">
+            <textarea id="textarea2" class="materialize-textarea" data-length="120">Description of Property</textarea>
+            <a class="waves-effect waves-light btn  delete-player">Submit</a>
+        </div>  
+        
+
+</div>
+    
     <div class="row">
         <div class="col">
-            {{#each players}}
+            {{#each id}}
             <h1>{{firstName}} {{lastName}}</h1>
             <p>Reach me at: {{email}} or {{phone}}</p>
             <button class="btn btn-danger delete-player" data-id="{{id}}">Delete</button>
@@ -23,13 +61,8 @@
 <script>
     $(document).ready(function () {
         $(".delete-player").on("click", function () {
-            const id = $(this).data("id");
-            $.ajax({
-                method: "DELETE",
-                url: `/api/players/${id}`
-            }).then(response => {
-                window.location.reload();
-            })
+          
+         window.location.replace("/");
         })
     })
 </script>
