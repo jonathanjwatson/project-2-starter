@@ -15,7 +15,8 @@ $(document).ready(function () {
       const locationId = "S1";
       const bookingId = "4352";
       const startDD = $("#datePicker").val();
-      const timeReserve = $("input[name='group1']:checked").val();
+      const timeReserve = $("#timereserve").val();
+      const propertyId = "8541";
       
 
       console.log(email);
@@ -40,7 +41,7 @@ $(document).ready(function () {
           bookingId,
           reason,
           startDD,
-        //   propertyId, 
+         propertyId, 
         timeReserve,
 
 
