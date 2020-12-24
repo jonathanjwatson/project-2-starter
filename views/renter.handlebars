@@ -1,0 +1,66 @@
+{{> navbar}}
+<div class="container">
+    <div class="row">
+        <div class="col s12 ">
+            <div class="card">
+                <div class="card-image">
+                    <img src="https://images.unsplash.com/photo-1575917649705-5b59aaa12e6b?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTF8fGF0bGFudGElMjBidWlsZGluZ3xlbnwwfDB8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60">
+                    <span class="card-title"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+     <div class="container">
+        <form method="post">
+            <div class="mb-3">
+                <label for="firstName" class="form-label">First Name</label>
+                <input type="text" class="form-control" id="firstName">
+            </div>
+
+            <div class="mb-3">
+                <label for="lastName" class="form-label">Last Name</label>
+                <input type="text" class="form-control" id="lastName">
+            </div>
+
+            <div class="mb-3">
+                <label for="datePicker" class="form-label">Select Day</label>
+                <input type="text" class="datepicker" id="datePicker">
+            </div>
+
+            <div class="input-field mb3">
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Email address</label>
+                    <input type="email" class="form-control" id="email"
+                        placeholder="name@example.com">
+                </div>
+                <div>
+                    <label for="">Select Time</label>
+                    <select class="browser-default" id="TimeReserve">
+                        <option value="" disabled selected>Select a time</option>
+                        <option value="1">Morning 8am-12pm</option>
+                        <option value="2">Afternon 1pm-5pm</option>
+                        <option value="3">Evening 6pm-10pm</option>
+                    </select>
+                </div>
+            </div>            
+            <div class="row">
+                <div class="mb-3 col s6">
+                    <label for="phoneNumber" class="form-label">Phone Number</label>
+                    <input type="phoneNumber" class="form-control" id="phoneNum">
+                </div>
+                <div class="mb-3 col s6">
+                    <label for="guestNumber" class="form-label">Guest Number</label>
+                    <input type="guestNumber" class="form-control" id="guestNumber">
+                </div>
+            </div>
+            <div class="mb-3" >
+                <label for="description" class="form-label">Why are you renting ?</label>
+                <textarea class="form-control" id="description" rows="3"></textarea>
+            </div>
+            <button id="new-booking" type="bookIt" class="btn btn-primary">Book it</button>
+            </form>
+    </div>
+</div>
+
+<script type="text/javascript" src="/assets/js/newRenter.js"></script>
